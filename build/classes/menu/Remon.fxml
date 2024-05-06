@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="787.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.SendmoneyController">
+   <children>
+      <TabPane layoutY="-2.0" prefHeight="482.0" prefWidth="778.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Profile">
+            <content>
+              <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="28.0" prefWidth="505.0">
+                     <children>
+                        <Label fx:id="plname" layoutX="44.0" layoutY="44.0" text="Userid" />
+                        <Label fx:id="pldob" layoutX="44.0" layoutY="122.0" text="Date of Birth" />
+                        <Label fx:id="placcno" layoutX="44.0" layoutY="200.0" text="Account No. " />
+                        <Label layoutX="44.0" layoutY="239.0" prefHeight="17.0" prefWidth="73.0" text="Mobile No." />
+                        <Label fx:id="pladdress" layoutX="44.0" layoutY="278.0" text="Address" />
+                        <Button fx:id="psave" layoutX="112.0" layoutY="328.0" mnemonicParsing="false" onAction="#psave" prefHeight="25.0" prefWidth="57.0" text="Save" />
+                        <Button fx:id="pedit" layoutX="183.0" layoutY="328.0" mnemonicParsing="false" onAction="#pedit" prefHeight="25.0" prefWidth="51.0" text="Edit" />
+                        <TextField fx:id="pname" layoutX="122.0" layoutY="40.0" />
+                        <TextField fx:id="pdob" layoutX="122.0" layoutY="118.0" />
+                        <TextField fx:id="paccountno" layoutX="122.0" layoutY="196.0" />
+                        <TextField fx:id="pmobileno" layoutX="122.0" layoutY="235.0" />
+                        <TextField fx:id="paddress" layoutX="122.0" layoutY="274.0" />
+                        <TextField fx:id="peamilid" layoutX="122.0" layoutY="157.0" />
+                        <Label fx:id="plemailid" layoutX="44.0" layoutY="161.0" text="Email id" />
+                        <Button fx:id="pcancel" layoutX="40.0" layoutY="328.0" mnemonicParsing="false" onAction="#pcancel" prefHeight="25.0" prefWidth="60.0" text="Cancel" />
+                        <ImageView fx:id="imgvw" fitHeight="162.0" fitWidth="124.0" layoutX="632.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" />
+                        <TextField fx:id="fulname" layoutX="122.0" layoutY="79.0" />
+                        <Label fx:id="plname1" layoutX="44.0" layoutY="83.0" text="Name" />
+                     </children></AnchorPane>
+            </content>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../New%20folder/146-1468319_edit-profile-female-icon-png-transparent-png-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Tab>
+          <Tab fx:id="tab2" onSelectionChanged="#tab2" text="Transfer">
+               <content>
+                  <AnchorPane id="AnchorPane" fx:id="anchorpane" prefHeight="290.0" prefWidth="416.0" styleClass="mainFxmlClass">
+                     <stylesheets>
+                        <URL value="@sendmoney.css" />
+                     </stylesheets>
+                     <children>
+                        <JFXTextField fx:id="accno" layoutX="36.0" layoutY="130.0" promptText="Recepient's Accno" />
+                        <JFXTextField fx:id="name" layoutX="36.0" layoutY="178.0" promptText="Recepients Name" />
+                        <JFXTextField fx:id="amount" layoutX="36.0" layoutY="288.0" onKeyReleased="#disabletranfer" promptText="Amount" />
+                        <JFXButton fx:id="search" layoutX="236.0" layoutY="130.0" onAction="#search" text="Search">
+                           <graphic>
+                              <ImageView fitHeight="39.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../New%20folder/free-magnifying-glass-icon-2916-thumb.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="transfer" layoutX="34.0" layoutY="341.0" onAction="#transfer" text="Transfer">
+                           <graphic>
+                              <ImageView fitHeight="27.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../New%20folder/601-6019830_pay-by-cash-vector-money-transfer-icon-hd.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <Label fx:id="label" layoutX="36.0" layoutY="203.0" text="Recepient&quot;s name" textFill="#ff0900" />
+                        <JFXPasswordField fx:id="tpassword" layoutX="36.0" layoutY="238.0" onAction="#tpassword" onKeyReleased="#disabletranfer" promptText="Pin" />
+                        <Label fx:id="tcb" alignment="CENTER" layoutX="70.0" layoutY="34.0" prefHeight="78.0" prefWidth="668.0">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../New%20folder/601-6019830_pay-by-cash-vector-money-transfer-icon-hd-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+          </Tab>
+            <Tab text="Mobile Recharge">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../New%20folder/mobile_recharge-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <content>
+                  <AnchorPane id="AnchorPane" fx:id="ranchorpane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass">
+                     <stylesheets>
+                        <URL value="@new.css" />
+                     </stylesheets>
+                     <children>
+                        <JFXTextField fx:id="rmobileNumber" layoutX="21.0" layoutY="202.0" onKeyReleased="#asd" promptText="Mobile Number" />
+                        <JFXTextField fx:id="ramount" layoutX="21.0" layoutY="276.0" onKeyReleased="#asd" promptText="Amount" />
+                        <JFXButton fx:id="recharge" layoutX="28.0" layoutY="325.0" onAction="#recharge" text="Recharge">
+                           <graphic>
+                              <ImageView fitHeight="41.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../New%20folder/images.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXPasswordField fx:id="rpassword" layoutX="21.0" layoutY="235.0" onAction="#rpassword" onKeyReleased="#asd" promptText="Pin" />
+                        <Label fx:id="rlabel" alignment="CENTER" layoutX="13.0" layoutY="50.0" prefHeight="88.0" prefWidth="755.0">
+                           <font>
+                              <Font name="System Bold" size="27.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="tab4" onSelectionChanged="#tab4" text="CashOut">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="277.0" prefWidth="425.0">
+                     <children>
+                        <JFXTextField fx:id="caccno" layoutX="72.0" layoutY="132.0" promptText="Agent's Accno" />
+                        <JFXTextField fx:id="cagent" layoutX="72.0" layoutY="169.0" promptText="Agent's Name" />
+                        <JFXTextField fx:id="ccontact" layoutX="72.0" layoutY="214.0" promptText="Agents Contact No" />
+                        <JFXButton fx:id="csearch" layoutX="276.0" layoutY="139.0" onAction="#csearch" text="Sreach">
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../New%20folder/free-magnifying-glass-icon-2916-thumb.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXButton fx:id="cashout" layoutX="72.0" layoutY="342.0" onAction="#cout" text="CashOut">
+                           <graphic>
+                              <ImageView fitHeight="28.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../New%20folder/resize-1633141440691982340images1removebgpreview.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </JFXButton>
+                        <JFXTextField fx:id="camount" layoutX="72.0" layoutY="301.0" onKeyReleased="#discout" promptText="Amount" />
+                        <JFXPasswordField fx:id="cpassword" layoutX="72.0" layoutY="263.0" onAction="#cpassword" onKeyReleased="#discout" promptText="Pin" />
+                        <Label fx:id="coulabel" alignment="CENTER" layoutX="6.0" layoutY="7.0" prefHeight="104.0" prefWidth="769.0">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+              </content>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../New%20folder/images__1_-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Tab>
+            <Tab fx:id="history" text="History">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="279.0" prefWidth="418.0">
+                     <children>
+                        <JFXButton fx:id="hrecharge" layoutX="73.0" layoutY="63.0" onAction="#hrecharge" text="Mobile recharge" />
+                        <JFXButton fx:id="htransfer" layoutX="270.0" layoutY="63.0" onAction="#htransfer" text="Transfer" />
+                        <JFXButton fx:id="htcout" layoutX="389.0" layoutY="63.0" onAction="#htcout" text="CashOut" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Payment">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="136.0" layoutY="101.0" text="Account No." />
+                        <Label layoutX="136.0" layoutY="233.0" text="Amount" />
+                        <Label layoutX="136.0" layoutY="169.0" text="Balance" />
+                        <Button layoutX="276.0" layoutY="291.0" mnemonicParsing="false" text="Button" />
+                        <TextField layoutX="253.0" layoutY="97.0" />
+                        <TextField layoutX="253.0" layoutY="165.0" />
+                        <TextField layoutX="253.0" layoutY="229.0" />
+                        <TextField layoutX="422.0" layoutY="229.0" />
+                        <Button layoutX="611.0" layoutY="230.0" mnemonicParsing="false" text="Total" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Change Pin">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="182.0" layoutY="54.0" prefWidth="75.0" text="Enter New Pin" />
+                        <Label layoutX="182.0" layoutY="104.0" text="Confirm New Pin" />
+                        <Button fx:id="piconfirmbtn" layoutX="323.0" layoutY="159.0" mnemonicParsing="false" onAction="#pinconfirm" text="Confirm" />
+                        <TextField fx:id="pinbox" layoutX="299.0" layoutY="50.0" onKeyReleased="#dispin" />
+                        <TextField fx:id="cpinbox" layoutX="299.0" layoutY="100.0" onKeyReleased="#dispin" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Developer">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="39.0" layoutY="54.0" text="Mehedi Islam Remon" />
+                        <Label layoutX="31.0" layoutY="217.0" text="- https://www.facebook.com/mehediislam.remon/" />
+                        <Label layoutX="35.0" layoutY="273.0" text="Email" />
+                        <Label layoutX="33.0" layoutY="303.0" text="- 190204113@aust.edu" />
+                        <Label layoutX="35.0" layoutY="106.0" text="Linkedin" />
+                        <Label layoutX="35.0" layoutY="145.0" text="- https://www.linkedin.com/in/md-mehedi-islam-remon/" />
+                        <Label layoutX="31.0" layoutY="186.0" text="Facebook" />
+                        <Label layoutX="416.0" layoutY="54.0" text="Tanjilur Rahman" />
+                        <Label layoutX="414.0" layoutY="106.0" text="Linkedin" />
+                        <Label layoutX="414.0" layoutY="146.0" text="Label" />
+                        <Label layoutX="414.0" layoutY="187.0" text="Facebook" />
+                        <Label layoutX="414.0" layoutY="217.0" text="- https://www.facebook.com/tanjilur.rahman.5949" />
+                        <Label layoutX="414.0" layoutY="273.0" text="Email" />
+                        <Label layoutX="414.0" layoutY="303.0" text="- 190204095@aust.edu" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

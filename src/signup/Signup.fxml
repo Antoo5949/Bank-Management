@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="signupanchorpane" prefHeight="640.0" prefWidth="463.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="signup.SignupController">
+    <stylesheets>
+        <URL value="@signup.css" />
+    </stylesheets>
+   <children>
+      <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="105.0" layoutY="14.0" prefHeight="32.0" prefWidth="241.0" text="Welcome to BankName">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="14.0" layoutY="46.0" text="Please fill up the following information to Sign UP">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="11.0" layoutY="590.0" onAction="#back_to_login_page" text="Already have an account? Log in" />
+      <JFXTextField fx:id="emailid" layoutX="14.0" layoutY="153.0" promptText="Email Id" />
+      <JFXPasswordField fx:id="password" layoutX="14.0" layoutY="200.0" promptText="Password" />
+      <JFXPasswordField layoutX="14.0" layoutY="246.0" promptText="Confirm Password" />
+      <JFXTextField fx:id="contactno" layoutX="14.0" layoutY="294.0" promptText="Contact No" />
+      <JFXTextField fx:id="address" layoutX="14.0" layoutY="335.0" promptText="Address" />
+      <JFXTextField fx:id="nidnumber" layoutX="14.0" layoutY="422.0" promptText="NID Number" />
+      <JFXButton fx:id="signup" layoutX="38.0" layoutY="565.0" onAction="#signup" prefHeight="25.0" prefWidth="74.0" text="Sign Up" />
+      <JFXTextField fx:id="userid" layoutX="14.0" layoutY="115.0" promptText="User Id" />
+      <JFXDatePicker fx:id="dob" layoutX="15.0" layoutY="383.0" promptText="Date of Birth" />
+      <JFXTextField fx:id="pin" layoutX="14.0" layoutY="464.0" promptText="Pin" />
+      <JFXTextField fx:id="fname" layoutX="14.0" layoutY="80.0" promptText="Name" />
+      <JFXButton fx:id="browse" layoutX="15.0" layoutY="516.0" onAction="#browse" prefHeight="25.0" prefWidth="74.0" text="Browse" />
+      <ImageView fx:id="img" fitHeight="150.0" fitWidth="200.0" layoutX="246.0" layoutY="402.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

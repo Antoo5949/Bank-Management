@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="664.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Profile.ProfileController">
+    <stylesheets>
+        <URL value="@profile.css" />
+    </stylesheets>
+   <children>
+      <JFXTextField fx:id="emailid" layoutX="24.0" layoutY="123.0" promptText="Email Id" />
+      <JFXTextField fx:id="contactno" layoutX="24.0" layoutY="174.0" promptText="Contact No" />
+      <JFXTextField fx:id="address" layoutX="24.0" layoutY="220.0" promptText="Address" />
+      <JFXTextField fx:id="nidnumber" layoutX="24.0" layoutY="259.0" promptText="NID Number" />
+      <JFXTextField fx:id="userid" layoutX="24.0" layoutY="77.0" promptText="User Id" />
+      <JFXButton fx:id="edit" layoutX="287.0" layoutY="312.0" onAction="#editAction" text="Edit" />
+      <JFXButton fx:id="update" disable="true" layoutX="392.0" layoutY="312.0" onAction="#updateAction" text="Update" visible="false" />
+      <JFXTextField fx:id="accountno" layoutX="24.0" layoutY="300.0" promptText="NID Number" text="Account No" />
+   </children>
+</AnchorPane>
